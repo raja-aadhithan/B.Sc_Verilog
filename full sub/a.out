@@ -1,0 +1,74 @@
+#! /usr/share/iverilog-0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xdb77e0 .scope module, "FS_TB" "FS_TB" 2 3;
+ .timescale 0 0;
+v0xdc8ac0_0 .var/i "i", 31 0;
+v0xdc8b80_0 .var "ta", 0 0;
+v0xdc8c30_0 .var "tb", 0 0;
+v0xdc8ce0_0 .net "tbr", 0 0, v0xdc88d0_0; 1 drivers
+v0xdc8dc0_0 .var "tc", 0 0;
+v0xdc8e70_0 .net "td", 0 0, v0xdc8a20_0; 1 drivers
+S_0xdb78d0 .scope module, "uut" "FS" 2 8, 3 2, S_0xdb77e0;
+ .timescale 0 0;
+v0xd95480_0 .net "a", 0 0, v0xdc8b80_0; 1 drivers
+v0xdc8830_0 .net "b", 0 0, v0xdc8c30_0; 1 drivers
+v0xdc88d0_0 .var "br", 0 0;
+v0xdc8970_0 .net "c", 0 0, v0xdc8dc0_0; 1 drivers
+v0xdc8a20_0 .var "d", 0 0;
+E_0xd93e10 .event edge, v0xdc8970_0, v0xdc8830_0, v0xd95480_0;
+    .scope S_0xdb78d0;
+T_0 ;
+    %wait E_0xd93e10;
+    %load/v 8, v0xd95480_0, 1;
+    %load/v 9, v0xdc8830_0, 1;
+    %xor 8, 9, 1;
+    %load/v 9, v0xdc8970_0, 1;
+    %xor 8, 9, 1;
+    %set/v v0xdc8a20_0, 8, 1;
+    %load/v 8, v0xd95480_0, 1;
+    %load/v 9, v0xdc8830_0, 1;
+    %xor 8, 9, 1;
+    %inv 8, 1;
+    %load/v 9, v0xdc8970_0, 1;
+    %and 8, 9, 1;
+    %load/v 9, v0xd95480_0, 1;
+    %inv 9, 1;
+    %load/v 10, v0xdc8830_0, 1;
+    %and 9, 10, 1;
+    %or 8, 9, 1;
+    %set/v v0xdc88d0_0, 8, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0xdb77e0;
+T_1 ;
+    %vpi_call 2 12 "$monitor", "Time = %2d,%b,%b,%b,%b,%b", $time, v0xdc8b80_0, v0xdc8c30_0, v0xdc8dc0_0, v0xdc8e70_0, v0xdc8ce0_0;
+    %vpi_call 2 13 "$dumpfile", "dump.vcd";
+    %vpi_call 2 13 "$dumpvars";
+    %set/v v0xdc8ac0_0, 0, 32;
+T_1.0 ;
+    %load/v 8, v0xdc8ac0_0, 32;
+   %cmpi/s 8, 8, 32;
+    %jmp/0xz T_1.1, 5;
+    %load/v 8, v0xdc8ac0_0, 32;
+    %set/v v0xdc8dc0_0, 8, 1;
+    %set/v v0xdc8c30_0, 9, 1;
+    %set/v v0xdc8b80_0, 10, 1;
+    %delay 5, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0xdc8ac0_0, 32;
+    %set/v v0xdc8ac0_0, 8, 32;
+    %jmp T_1.0;
+T_1.1 ;
+    %vpi_call 2 20 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";

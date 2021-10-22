@@ -1,0 +1,107 @@
+#! /usr/share/iverilog-0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1c33020 .scope module, "tmux" "tmux" 2 3;
+ .timescale 0 0;
+v0x1c467b0_0 .var/i "i", 31 0;
+v0x1c46870_0 .var/i "j", 31 0;
+v0x1c46910_0 .var "t1", 0 0;
+v0x1c46990_0 .var "t2", 0 0;
+v0x1c46a70_0 .var "t3", 0 0;
+v0x1c46b20_0 .var "t4", 0 0;
+v0x1c46be0_0 .var "ts1", 0 0;
+v0x1c46c90_0 .var "ts2", 0 0;
+v0x1c46d90_0 .net "ty", 0 0, v0x1c46710_0; 1 drivers
+S_0x1c33110 .scope module, "uut" "MUX" 2 8, 3 2, S_0x1c33020;
+ .timescale 0 0;
+v0x1c21970_0 .net "i1", 0 0, v0x1c46910_0; 1 drivers
+v0x1c463a0_0 .net "i2", 0 0, v0x1c46990_0; 1 drivers
+v0x1c46440_0 .net "i3", 0 0, v0x1c46a70_0; 1 drivers
+v0x1c464e0_0 .net "i4", 0 0, v0x1c46b20_0; 1 drivers
+v0x1c46590_0 .net "s1", 0 0, v0x1c46be0_0; 1 drivers
+v0x1c46630_0 .net "s2", 0 0, v0x1c46c90_0; 1 drivers
+v0x1c46710_0 .var "y", 0 0;
+E_0x1c0fca0/0 .event edge, v0x1c464e0_0, v0x1c46440_0, v0x1c463a0_0, v0x1c21970_0;
+E_0x1c0fca0/1 .event edge, v0x1c46630_0, v0x1c46590_0;
+E_0x1c0fca0 .event/or E_0x1c0fca0/0, E_0x1c0fca0/1;
+    .scope S_0x1c33110;
+T_0 ;
+    %wait E_0x1c0fca0;
+    %load/v 8, v0x1c46630_0, 1;
+    %inv 8, 1;
+    %load/v 9, v0x1c46590_0, 1;
+    %inv 9, 1;
+    %and 8, 9, 1;
+    %load/v 9, v0x1c21970_0, 1;
+    %and 8, 9, 1;
+    %load/v 9, v0x1c46590_0, 1;
+    %inv 9, 1;
+    %load/v 10, v0x1c46630_0, 1;
+    %and 9, 10, 1;
+    %load/v 10, v0x1c463a0_0, 1;
+    %and 9, 10, 1;
+    %or 8, 9, 1;
+    %load/v 9, v0x1c46590_0, 1;
+    %load/v 10, v0x1c46630_0, 1;
+    %inv 10, 1;
+    %and 9, 10, 1;
+    %load/v 10, v0x1c46440_0, 1;
+    %and 9, 10, 1;
+    %or 8, 9, 1;
+    %load/v 9, v0x1c46630_0, 1;
+    %load/v 10, v0x1c46590_0, 1;
+    %and 9, 10, 1;
+    %load/v 10, v0x1c464e0_0, 1;
+    %and 9, 10, 1;
+    %or 8, 9, 1;
+    %set/v v0x1c46710_0, 8, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x1c33020;
+T_1 ;
+    %vpi_call 2 11 "$monitor", "Time = %2d,%b,%b,%b,%b,%b,%b,%b", $time, v0x1c46be0_0, v0x1c46c90_0, v0x1c46910_0, v0x1c46990_0, v0x1c46a70_0, v0x1c46b20_0, v0x1c46d90_0;
+    %vpi_call 2 13 "$dumpfile", "dump.vcd";
+    %vpi_call 2 13 "$dumpvars";
+    %set/v v0x1c46870_0, 0, 32;
+T_1.0 ;
+    %load/v 8, v0x1c46870_0, 32;
+   %cmpi/s 8, 4, 32;
+    %jmp/0xz T_1.1, 5;
+    %movi 8, 2, 32;
+    %load/v 40, v0x1c46870_0, 32;
+    %pow/s 8, 40, 32;
+    %set/v v0x1c46910_0, 8, 1;
+    %set/v v0x1c46990_0, 9, 1;
+    %set/v v0x1c46a70_0, 10, 1;
+    %set/v v0x1c46b20_0, 11, 1;
+    %set/v v0x1c467b0_0, 0, 32;
+T_1.2 ;
+    %load/v 8, v0x1c467b0_0, 32;
+   %cmpi/s 8, 4, 32;
+    %jmp/0xz T_1.3, 5;
+    %load/v 8, v0x1c467b0_0, 32;
+    %set/v v0x1c46c90_0, 8, 1;
+    %set/v v0x1c46be0_0, 9, 1;
+    %delay 5, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x1c467b0_0, 32;
+    %set/v v0x1c467b0_0, 8, 32;
+    %jmp T_1.2;
+T_1.3 ;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x1c46870_0, 32;
+    %set/v v0x1c46870_0, 8, 32;
+    %jmp T_1.0;
+T_1.1 ;
+    %vpi_call 2 23 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";

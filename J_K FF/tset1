@@ -1,0 +1,11 @@
+module ab();
+  reg [4:0] a,b,c;
+  initial 
+    begin
+      a =5'b0x;
+      b = 6;
+      c =a&&b;
+      $display("%b, %b, %b",a,b,c);
+    end
+endmodule
+               

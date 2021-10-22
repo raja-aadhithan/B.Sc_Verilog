@@ -1,0 +1,46 @@
+$date
+	Fri Oct 22 02:40:14 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module andgate_tb $end
+$var wire 1 ! tb_y $end
+$var reg 1 " tb_a $end
+$var reg 1 # tb_b $end
+$scope module any_label $end
+$var wire 1 $ a $end
+$var wire 1 % b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+z!
+$end
+#4
+0!
+#5
+1#
+1%
+#8
+1!
+#10
+0#
+0%
+1"
+1$
+#15
+1#
+1%
+#19
+0!
+#20

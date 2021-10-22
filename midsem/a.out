@@ -1,0 +1,62 @@
+#! /usr/share/iverilog-0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xf26ca0 .scope module, "TB_FS" "TB_FS" 2 1;
+ .timescale 0 0;
+v0xf5a550_0 .var/i "i", 31 0;
+v0xf5a610_0 .var "ta", 0 0;
+v0xf5a690_0 .var "tb", 0 0;
+v0xf5a740_0 .net "tbo", 0 0, L_0xf5ac40; 1 drivers
+v0xf5a820_0 .var "tc", 0 0;
+v0xf5a8d0_0 .net "td", 0 0, L_0xf5af50; 1 drivers
+S_0xf26d90 .scope module, "dut" "FS" 2 5, 3 1, S_0xf26ca0;
+ .timescale 0 0;
+L_0xf5a950 .functor AND 1, v0xf5a690_0, v0xf5a820_0, C4<1>, C4<1>;
+L_0xf5aa30 .functor NOT 1, v0xf5a610_0, C4<0>, C4<0>, C4<0>;
+L_0xf5aae0 .functor XOR 1, v0xf5a690_0, v0xf5a820_0, C4<0>, C4<0>;
+L_0xf5ab40 .functor AND 1, L_0xf5aa30, L_0xf5aae0, C4<1>, C4<1>;
+L_0xf5ac40 .functor OR 1, L_0xf5a950, L_0xf5ab40, C4<0>, C4<0>;
+L_0xf5ad90 .functor XOR 1, v0xf5a690_0, v0xf5a820_0, C4<0>, C4<0>;
+L_0xf5af50 .functor XOR 1, v0xf5a610_0, L_0xf5ad90, C4<0>, C4<0>;
+v0xf26e80_0 .net "A", 0 0, v0xf5a610_0; 1 drivers
+v0xf59eb0_0 .net "B", 0 0, v0xf5a690_0; 1 drivers
+v0xf59f50_0 .alias "Bo", 0 0, v0xf5a740_0;
+v0xf59ff0_0 .net "C", 0 0, v0xf5a820_0; 1 drivers
+v0xf5a0a0_0 .alias "D", 0 0, v0xf5a8d0_0;
+v0xf5a140_0 .net *"_s0", 0 0, L_0xf5a950; 1 drivers
+v0xf5a220_0 .net *"_s10", 0 0, L_0xf5ad90; 1 drivers
+v0xf5a2c0_0 .net *"_s2", 0 0, L_0xf5aa30; 1 drivers
+v0xf5a3b0_0 .net *"_s4", 0 0, L_0xf5aae0; 1 drivers
+v0xf5a450_0 .net *"_s6", 0 0, L_0xf5ab40; 1 drivers
+    .scope S_0xf26ca0;
+T_0 ;
+    %vpi_call 2 8 "$monitor", "time @ %2d- ip %b %b %b - op %b %b", $time, v0xf5a610_0, v0xf5a690_0, v0xf5a820_0, v0xf5a740_0, v0xf5a8d0_0;
+    %vpi_call 2 9 "$dumpfile", "dump.vcd";
+    %vpi_call 2 10 "$dumpvars";
+    %set/v v0xf5a550_0, 0, 32;
+T_0.0 ;
+    %load/v 8, v0xf5a550_0, 32;
+   %cmpi/s 8, 8, 32;
+    %jmp/0xz T_0.1, 5;
+    %load/v 8, v0xf5a550_0, 32;
+    %set/v v0xf5a820_0, 8, 1;
+    %set/v v0xf5a690_0, 9, 1;
+    %set/v v0xf5a610_0, 10, 1;
+    %delay 5, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0xf5a550_0, 32;
+    %set/v v0xf5a550_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %vpi_call 2 16 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";

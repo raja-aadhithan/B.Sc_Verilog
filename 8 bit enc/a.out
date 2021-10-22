@@ -1,0 +1,105 @@
+#! /usr/share/iverilog-0.9.7/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_6)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x1648e10 .scope module, "TENC" "TENC" 2 3;
+ .timescale 0 0;
+v0x1660d60_0 .var/i "j", 31 0;
+RS_0x7fbb5eb06408 .resolv tri, L_0x1660f20, L_0x1661620, L_0x1661da0, C4<zzz>;
+v0x1660e20_0 .net8 "ta", 2 0, RS_0x7fbb5eb06408; 3 drivers
+v0x1660ea0_0 .var "ty", 7 0;
+S_0x1648f00 .scope module, "dut" "ENC" 2 8, 3 2, S_0x1648e10;
+ .timescale 0 0;
+L_0x1660370 .functor OR 1, L_0x1660fc0, L_0x16610b0, C4<0>, C4<0>;
+L_0x1661350 .functor OR 1, L_0x1660370, L_0x1661220, C4<0>, C4<0>;
+L_0x16614d0 .functor OR 1, L_0x1661350, L_0x1661430, C4<0>, C4<0>;
+L_0x1661850 .functor OR 1, L_0x16616c0, L_0x1661760, C4<0>, C4<0>;
+L_0x16612c0 .functor OR 1, L_0x1661850, L_0x1661950, C4<0>, C4<0>;
+L_0x1661ca0 .functor OR 1, L_0x16612c0, L_0x1661ba0, C4<0>, C4<0>;
+L_0x1661c40 .functor OR 1, L_0x1661ed0, L_0x1661f70, C4<0>, C4<0>;
+L_0x1662180 .functor OR 1, L_0x1661c40, L_0x1662060, C4<0>, C4<0>;
+L_0x1662370 .functor OR 1, L_0x1662180, L_0x16622d0, C4<0>, C4<0>;
+v0x163b390_0 .net *"_s10", 0 0, L_0x1661350; 1 drivers
+v0x165fd50_0 .net *"_s13", 0 0, L_0x1661430; 1 drivers
+v0x165fdf0_0 .net *"_s14", 0 0, L_0x16614d0; 1 drivers
+v0x165fe90_0 .net *"_s19", 0 0, L_0x16616c0; 1 drivers
+v0x165ff40_0 .net *"_s21", 0 0, L_0x1661760; 1 drivers
+v0x165ffe0_0 .net *"_s22", 0 0, L_0x1661850; 1 drivers
+v0x16600c0_0 .net *"_s25", 0 0, L_0x1661950; 1 drivers
+v0x1660160_0 .net *"_s26", 0 0, L_0x16612c0; 1 drivers
+v0x1660250_0 .net *"_s29", 0 0, L_0x1661ba0; 1 drivers
+v0x16602f0_0 .net *"_s3", 0 0, L_0x1660fc0; 1 drivers
+v0x16603f0_0 .net *"_s30", 0 0, L_0x1661ca0; 1 drivers
+v0x1660490_0 .net *"_s35", 0 0, L_0x1661ed0; 1 drivers
+v0x16605a0_0 .net *"_s37", 0 0, L_0x1661f70; 1 drivers
+v0x1660640_0 .net *"_s38", 0 0, L_0x1661c40; 1 drivers
+v0x1660760_0 .net *"_s41", 0 0, L_0x1662060; 1 drivers
+v0x1660800_0 .net *"_s42", 0 0, L_0x1662180; 1 drivers
+v0x16606c0_0 .net *"_s45", 0 0, L_0x16622d0; 1 drivers
+v0x1660950_0 .net *"_s46", 0 0, L_0x1662370; 1 drivers
+v0x1660a70_0 .net *"_s5", 0 0, L_0x16610b0; 1 drivers
+v0x1660af0_0 .net *"_s6", 0 0, L_0x1660370; 1 drivers
+v0x16609d0_0 .net *"_s9", 0 0, L_0x1661220; 1 drivers
+v0x1660c20_0 .alias "a", 2 0, v0x1660e20_0;
+v0x1660b70_0 .net "y", 7 0, v0x1660ea0_0; 1 drivers
+L_0x1660f20 .part/pv L_0x16614d0, 2, 1, 3;
+L_0x1660fc0 .part v0x1660ea0_0, 4, 1;
+L_0x16610b0 .part v0x1660ea0_0, 5, 1;
+L_0x1661220 .part v0x1660ea0_0, 6, 1;
+L_0x1661430 .part v0x1660ea0_0, 7, 1;
+L_0x1661620 .part/pv L_0x1661ca0, 1, 1, 3;
+L_0x16616c0 .part v0x1660ea0_0, 2, 1;
+L_0x1661760 .part v0x1660ea0_0, 3, 1;
+L_0x1661950 .part v0x1660ea0_0, 6, 1;
+L_0x1661ba0 .part v0x1660ea0_0, 7, 1;
+L_0x1661da0 .part/pv L_0x1662370, 0, 1, 3;
+L_0x1661ed0 .part v0x1660ea0_0, 1, 1;
+L_0x1661f70 .part v0x1660ea0_0, 3, 1;
+L_0x1662060 .part v0x1660ea0_0, 5, 1;
+L_0x16622d0 .part v0x1660ea0_0, 7, 1;
+    .scope S_0x1648e10;
+T_0 ;
+    %vpi_call 2 12 "$monitor", "Time = %2d,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b,%b", $time, &PV<v0x1660ea0_0, 7, 1>, &PV<v0x1660ea0_0, 6, 1>, &PV<v0x1660ea0_0, 5, 1>, &PV<v0x1660ea0_0, 4, 1>, &PV<v0x1660ea0_0, 3, 1>, &PV<v0x1660ea0_0, 2, 1>, &PV<v0x1660ea0_0, 1, 1>, &PV<v0x1660ea0_0, 0, 1>, &PV<v0x1660e20_0, 2, 1>, &PV<v0x1660e20_0, 1, 1>, &PV<v0x1660e20_0, 0, 1>;
+    %vpi_call 2 14 "$dumpfile", "dump.vcd";
+    %vpi_call 2 14 "$dumpvars";
+    %set/v v0x1660d60_0, 0, 32;
+T_0.0 ;
+    %load/v 8, v0x1660d60_0, 32;
+   %cmpi/s 8, 8, 32;
+    %jmp/0xz T_0.1, 5;
+    %movi 8, 2, 32;
+    %load/v 40, v0x1660d60_0, 32;
+    %pow/s 8, 40, 32;
+    %ix/load 0, 0, 0;
+    %set/x0 v0x1660ea0_0, 8, 1;
+    %ix/load 0, 1, 0;
+    %set/x0 v0x1660ea0_0, 9, 1;
+    %ix/load 0, 2, 0;
+    %set/x0 v0x1660ea0_0, 10, 1;
+    %ix/load 0, 3, 0;
+    %set/x0 v0x1660ea0_0, 11, 1;
+    %ix/load 0, 4, 0;
+    %set/x0 v0x1660ea0_0, 12, 1;
+    %ix/load 0, 5, 0;
+    %set/x0 v0x1660ea0_0, 13, 1;
+    %ix/load 0, 6, 0;
+    %set/x0 v0x1660ea0_0, 14, 1;
+    %ix/load 0, 7, 0;
+    %set/x0 v0x1660ea0_0, 15, 1;
+    %delay 5, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v0x1660d60_0, 32;
+    %set/v v0x1660d60_0, 8, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %vpi_call 2 20 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.sv";
+    "design.sv";

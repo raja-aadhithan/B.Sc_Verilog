@@ -1,0 +1,53 @@
+$date
+	Fri Oct 22 02:31:24 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module TB_HS $end
+$var wire 1 ! tbo $end
+$var wire 1 " td $end
+$var reg 1 # ta $end
+$var reg 1 $ tb $end
+$scope module dut $end
+$var wire 1 % a $end
+$var wire 1 & b $end
+$var reg 1 ' bo $end
+$var reg 1 ( d $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1'
+1!
+1(
+1"
+1$
+1&
+#10
+0'
+0!
+0$
+0&
+1#
+1%
+#15
+0(
+0"
+1$
+1&
+#20

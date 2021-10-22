@@ -1,0 +1,47 @@
+$date
+	Fri Oct 22 02:47:53 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module TENC $end
+$var wire 2 ! ta [1:0] $end
+$var integer 32 " j [31:0] $end
+$var reg 4 # ty [3:0] $end
+$scope module dut $end
+$var wire 4 $ y [3:0] $end
+$var reg 2 % a [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 %
+b1 $
+b1 #
+b0 "
+b0 !
+$end
+#5
+b1 %
+b1 !
+b10 #
+b10 $
+b1 "
+#10
+b10 %
+b10 !
+b100 $
+b100 #
+b10 "
+#15
+b11 %
+b11 !
+b1000 $
+b1000 #
+b11 "
+#20
+b100 "
